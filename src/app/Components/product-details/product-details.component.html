@@ -1,0 +1,19 @@
+<div class="card mt-3" style="width: 18rem;">
+    <img [src]="product?.url" class="card-img-top" style="height:200px ;" alt="Product">
+    <div class="card-body">
+      <h3 class="card-title"> Name: {{product?.name}}</h3>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> a personal computer, cell phone, smart phone,tablet or any other electronic device that we allow you to use to access the Services</li>
+        <li class="list-group-item"> Price: {{product?.price | currency}}</li>
+        <li class="list-group-item"> Quantity: {{product?.quantity}}</li>
+      </ul>
+      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <button [disabled]="isFirstItem()" type="button" class="btn btn-success" (click)="prevProduct()">Previous</button>
+        <button type="button" class="btn btn-warning" (click)="goBack()">Back</button>
+        <button [disabled]="islastItem()" type="button" class="btn btn-success" (click)="nextProduct()">Next</button>
+      </div>
+  </div>
+  <br><br>
+
+  

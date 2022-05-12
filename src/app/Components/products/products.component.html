@@ -1,0 +1,62 @@
+<ng-container  *ngFor="let pro of catProductList;" >
+  
+<div  class="card mt-3" style="width: 18rem;  display: inline-block; margin-right:20px;"*ngIf="pro.quantity!=0"  [ngStyle]="{'background-color':pro.quantity==1? 'yellow':'white'}">
+  <img [src]="pro.url" class="card-img-top" style="height:200px ;" alt="..." (click)="openDialog(pro)">
+  <div class="card-body">
+    <h5 class="card-title">{{pro.name}}</h5>
+    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Price: {{pro.price | currency}}</li>
+    <li class="list-group-item"><input #TotalAmount type="number" class="form-control" style="width:80px"></li>
+    <li class="list-group-item">A third item</li>
+  </ul>
+  <div class="card-body">
+    <button class="btn btn-primary" (click)="ProductDetails(pro.id)">Details</button>
+    <button class="btn btn-primary" (click)="AddCartItem(pro.id,pro.name,pro.price,+TotalAmount.value, pro.url )">Add To Cart</button>
+  </div>
+</div>
+</ng-container>
+ <!-- <table class="table" *ngIf="isImgShownTable"  >
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Image</th>
+      <th scope="col">Price</th>
+      <th scope="col">Category Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Details</th>
+      <th scope="col">Buy It Now</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container  *ngFor="let pro of catProductList; trackBy: hiddenElement">
+    <tr *ngIf="pro.Quantity!=0"  [ngStyle]="{'background-color':pro.Quantity==1? 'yellow':'white'}">
+      <!-- <td scope="row">1</td> -->
+      <!-- <td scope="col">{{pro.ID}}</td>
+      <td scope="col">{{pro.Name}}</td>
+      <td scope="col"><img  src="{{pro.Img}}" style="width: 50px; height: 50px;" /></td>
+      <td scope="col">{{pro.Price | currency}}</td>
+      <td scope="col">{{pro.CatName}}</td>
+      <td scope="col">{{pro.Quantity}}</td>
+      <td scope="col"><input #TotalAmount type="number" class="form-control" style="width:80px"></td>
+      <td scope="col"><button class="btn btn-primary" (click)="ProductDetails(pro.ID)">Details</button></td>
+      <td scope="col"><button class="btn btn-primary" (click)="AddCartItem(pro.ID,pro.Name,pro.Price,+TotalAmount.value )">Add To Cart</button></td>
+
+    </tr>
+  </ng-container>
+  </tbody>
+</table> -->
+  <br>
+  <!-- <strong>Enter Clint name Here:</strong>
+  <div class="input-group mb-3">
+    <input type="text" [(ngModel)]="ClientName" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+    <br>
+  </div>
+  <button class="btn btn-primary"(click)="HideTable()" >Buy Now</button>
+  <div *ngIf="isImgShownDiv">Thanks for purchasing from our Store {{ClientName}}</div> -->
+ 
